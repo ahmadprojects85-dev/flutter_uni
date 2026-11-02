@@ -3,8 +3,9 @@ import 'package:flutter_application_1/models/payment.dart';
 import 'package:flutter_application_1/widget/payment_tile.dart';
 import 'package:flutter_application_1/widget/summary_card.dart';
 
-class Homescreen extends StatelessWidget {
-  const Homescreen({super.key});
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class Homescreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('GenTrack'),
         centerTitle: true,
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
         actions: [
           IconButton(
@@ -26,22 +27,34 @@ class Homescreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SummaryCard(total: totalOf(samplePayments)),
-          const Padding(padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              'Recent Payments',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            )
+          SummaryCard(total: totalOf(samplePayments), count: samplePayments.length),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Recent Payments',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () => print('See all tapped'),
+                  child: const Text('See all'),
+                ),
+              ],
+            ),
           ),
-          Expanded(child: ListView(children: [
-
-          for (final e in samplePayments)
-            PaymentTile(payment: e)
-
-          ],))
+          Expanded(
+            child: ListView(
+              children: [
+                for (final e in samplePayments)
+                  PaymentTile(payment: e),
+              ],
+            ),
+          ),
         ],
       ),
     );
