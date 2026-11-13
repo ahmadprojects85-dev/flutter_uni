@@ -18,24 +18,30 @@ class Payment {
 
 // Sample data until users can add their own payments.
 final List<Payment> samplePayments = [
-  Payment(title: 'Ampere fee', amount: 8000,
-      category: 'Generator', date: DateTime(2026, 10, 12)),
-  Payment(title: 'Mains bill', amount: 1500,
-      category: 'Mains', date: DateTime(2026, 10, 12)),
-  Payment(title: 'Diesel', amount: 35000,
-      category: 'Fuel', date: DateTime(2026, 10, 10)),
-  Payment(title: 'Electrician', amount: 12000,
-      category: 'Repairs', date: DateTime(2026, 10, 9)),
-        Payment(title: 'Ampere fee', amount: 8000,
-      category: 'Generator', date: DateTime(2026, 10, 12)),
-  Payment(title: 'Mains bill', amount: 1500,
-      category: 'Mains', date: DateTime(2026, 10, 12)),
-  Payment(title: 'Diesel', amount: 35000,
-      category: 'Fuel', date: DateTime(2026, 10, 10)),
-  Payment(title: 'Electrician', amount: 12000,
-      category: 'Repairs', date: DateTime(2026, 10, 9)),
-      Payment(title: 'Health Checkup', amount: 50000,
-       category: 'Health', date: DateTime(2026, 10, 8))
+  Payment(
+    title: 'Ampere fee',
+    amount: 8000,
+    category: 'Generator',
+    date: DateTime(2026, 10, 12),
+  ),
+  Payment(
+    title: 'Mains bill',
+    amount: 1500,
+    category: 'Mains',
+    date: DateTime(2026, 10, 12),
+  ),
+  Payment(
+    title: 'Diesel',
+    amount: 35000,
+    category: 'Fuel',
+    date: DateTime(2026, 10, 10),
+  ),
+  Payment(
+    title: 'Electrician',
+    amount: 12000,
+    category: 'Repairs',
+    date: DateTime(2026, 10, 9),
+  ),
 ];
 
 // Adds up the amounts of all payments in the list.

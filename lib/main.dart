@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:daily_activities/screens/home_screen.dart';
+import 'package:daily_activities/theme/app_theme.dart';
 import 'models/payment.dart';
 
 void main() {
-  // Printed in the Debug Console when the app starts.
-  for (final e in samplePayments) {
-    print(e);
-  }
-  print('Total: ${formatIqd(totalOf(samplePayments))}');
   runApp(const GenTrackApp());
 }
 
@@ -16,14 +12,13 @@ class GenTrackApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final total = totalOf(samplePayments);
     return MaterialApp(
       title: 'GenTrack',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-      ),
-      home: HomeScreen(),
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
+      themeMode: ThemeMode.dark,
+      home: const HomeScreen(),
     );
   }
 }
