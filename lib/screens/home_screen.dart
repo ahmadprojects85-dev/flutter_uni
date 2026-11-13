@@ -85,8 +85,8 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Gen Track'),
         centerTitle: true,
-        backgroundColor: Colors.teal,
-        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 151, 139, 5),
+        foregroundColor: const Color.fromARGB(255, 137, 53, 53),
         actions: [
           IconButton(
             onPressed: () {
